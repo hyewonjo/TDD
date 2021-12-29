@@ -16,6 +16,8 @@ public class ReviewControllerTest {
     @Autowired
     MockMvc mockMvc;
 
+    private ReviewService reviewService;
+
     @Test
     void 후기_조회_성공() throws Exception {
         // 준비
