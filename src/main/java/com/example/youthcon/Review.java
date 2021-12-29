@@ -13,6 +13,12 @@ public class Review {
     private String content;
     private String phoneNumber;
 
+    public Review(Long id, String content, String phoneNumber) {
+        this.id = id;
+        this.content = content;
+        this.phoneNumber = phoneNumber;
+    }
+
     public Long getId() {
         return id;
     }
