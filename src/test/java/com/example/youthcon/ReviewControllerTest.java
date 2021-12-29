@@ -7,6 +7,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest
@@ -23,6 +24,9 @@ public class ReviewControllerTest {
         ResultActions perform = mockMvc.perform(get("/reviews/1"));
 
         // 검증
-        perform.andExpect(status().isOk());
+        perform.andExpect(status().isOk())
+                .andExpect(jsonPath("id").value(1))
+                .andExpect(jsonPath("content").value("재밌어요"))
+                .andExpect(jsonPath("phoneNumber").value("010-1111-2222"));
     }
 }
