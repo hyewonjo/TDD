@@ -4,4 +4,4 @@ create table review
     CONTENT VARCHAR(255),
     PHONE_NUMBER VARCHAR(255),
     SENT BIT(1)
-)
+);
