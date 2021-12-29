@@ -1,18 +1,18 @@
 package com.example.youthcon;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
+import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest
+@WebMvcTest(ReviewController.class)
 public class ReviewControllerTest {
 
     @Autowired
@@ -28,7 +28,7 @@ public class ReviewControllerTest {
     @Test
     void 후기_조회_성공() throws Exception {
         // 준비
-        BDDMockito.given(reviewService.getById(id))
+        given(reviewService.getById(id))
                 .willReturn(new Review(id, content, phoneNumber));
 
         // 실행
