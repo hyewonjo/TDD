@@ -2,7 +2,7 @@ package com.example.youthcon;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class ReviewServiceTest {
 
@@ -16,6 +16,7 @@ class ReviewServiceTest {
         Review review = reviewService.getById(1L);
 
         // 검증
+        assertThat(review.getId()).isEqualTo(1);
     }
 
 }
