@@ -24,6 +24,8 @@ class ReviewRepositoryTest {
 
         // 검증
         Assertions.assertThat(review.getId()).isEqualTo(1L);
+        Assertions.assertThat(review.getContent()).isEqualTo("재밌어요");
+        Assertions.assertThat(review.getPhoneNumber()).isEqualTo("010-1111-2222");
     }
 
 }

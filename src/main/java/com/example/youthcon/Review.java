@@ -10,9 +10,18 @@ public class Review {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String content;
+    private String phoneNumber;
 
     public Long getId() {
         return id;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 }
